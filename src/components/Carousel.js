@@ -735,7 +735,8 @@ class Carousel extends Component {
   renderArrowRight = () => {
     const slides = this.getChildren();
     const value = this.getCurrentValue();
-    const lastSlideIndex = slides.length - 1;
+    const slidesPerPage = this.getProp('slidesPerPage');
+    const lastSlideIndex = slides.length - slidesPerPage;
     const disabled = value === lastSlideIndex && !this.getProp('infinite');
 
     if (this.getProp('arrowRight')) {
